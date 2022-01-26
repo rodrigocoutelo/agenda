@@ -1,6 +1,4 @@
 # Agenda
-JAVA
-
-SERVLETS
-
-JSP
+# JAVA
+#SERVLETS
+# JSP
