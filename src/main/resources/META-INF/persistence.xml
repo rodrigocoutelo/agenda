@@ -1,0 +1,31 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd" version="2.0">
+  
+  <persistence-unit name="crud" transaction-type="RESOURCE_LOCAL">
+  		<jta-data-source>java:jboss/datasources/Crud</jta-data-source>
+  		<class>br.com.coutelo.model.User</class>
+      <class>br.com.coutelo.model.Phone</class>
+			<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+			<property name="hibernate.hbm2ddl.auto" value="create"/>
+			<!-- <property name="hibernate.hbm2ddl.import_files" value="/import.sql"/> -->
+			<property name="hibernate.show_sql" value="true"/>
+			<property name="hibernate.format_sql" value="false"/>
+		</properties>
+  </persistence-unit>
+  
+ <persistence-unit name="crud_teste" transaction-type="RESOURCE_LOCAL">
+  		<class>br.com.coutelo.model.User</class>
+      <class>br.com.coutelo.model.Phone</class>
+			<properties>
+			<property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbc.JDBCDriver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:file:crud"/>
+			<property name="javax.persistence.jdbc.user" value="sa"/>
+			<property name="javax.persistence.jdbc.password" value=""/> 
+			<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+			<property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+			<property name="hibernate.hbm2ddl.import_files" value="/import.sql"/>
+			<property name="hibernate.show_sql" value="true"/>
+			<property name="hibernate.format_sql" value="false"/>
+		</properties>
+  </persistence-unit>  
+</persistence>
